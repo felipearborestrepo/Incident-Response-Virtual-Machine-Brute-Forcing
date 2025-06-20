@@ -107,7 +107,6 @@ Work your incident to completion and close it out, in accordance with the **NIST
 DeviceLogonEvents
 | where RemoteIP in ("81.230.146.160", "62.139.199.159", "62.139.199.159")
 | where ActionType != "LogonFailed"
-![Screenshot 2025-06-19 231747](https://github.com/user-attachments/assets/75c7feb8-6462-46d2-9c75-da5ac2b366fb)
 
 ```
 ![Screenshot 2025-06-19 231747](https://github.com/user-attachments/assets/a6ce3f25-636f-4897-ae90-5cb86ad1486e)
