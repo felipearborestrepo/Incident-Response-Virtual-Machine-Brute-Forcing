@@ -19,10 +19,18 @@ Remote attackers attempting to log in to Azure VMs generate logs in `DeviceLogon
 
 ### 🛠️ Rule Configuration
 
+- **MITRE ATT&CK Techniques:**
+  - T1110.001 – Password Guessing  
+  - T1110.002 – Password Cracking  
+  - T1087.001 – Account Discovery (Local)
+
+![Screenshot 2025-06-19 225131](https://github.com/user-attachments/assets/226502a1-7013-4818-aae9-c71381067772)
+
+![Screenshot 2025-06-19 225158](https://github.com/user-attachments/assets/572fd467-0d47-43ff-8f6d-d86f0162f54a)
+
 - **Type:** Scheduled Query Rule  
 - **Frequency:** Every 5 hours  
 - **Lookup Time:** Last 5 hours
-- 
 - **Entity Mappings:**
   - Host → `DeviceName`
   - IP → `RemoteIP`
