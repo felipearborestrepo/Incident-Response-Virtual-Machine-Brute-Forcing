@@ -2,11 +2,15 @@
 
 This project simulates a brute force attack detection on an Azure VM using Microsoft Sentinel, Microsoft Defender for Endpoint (MDE), and Azure Log Analytics. It follows the **NIST 800-61 Incident Response Lifecycle** and maps activity to **MITRE ATT&CK** techniques.
 
+![ChatGPT Image Jun 20, 2025, 12_19_41 AM](https://github.com/user-attachments/assets/eedddaf2-c01a-484b-8499-0dac68a7c8ce)
+
 ---
 
 ## 📘 Overview
 
 Remote attackers attempting to log in to Azure VMs generate logs in `DeviceLogonEvents`. These logs are ingested into Microsoft Sentinel, where we set up a scheduled query rule to detect brute force activity and respond appropriately.
+
+![image](https://github.com/user-attachments/assets/0b6e3f21-4a62-4e51-92b6-74df5650f90e)
 
 ---
 
@@ -46,6 +50,7 @@ DeviceLogonEvents
 | summarize NumberOfFailures = count() by DeviceName, RemoteIP, ActionType
 | where NumberOfFailures >= 50
 ```
+![Screenshot 2025-06-20 001438](https://github.com/user-attachments/assets/e150f4fd-fdd3-48aa-a0cf-19accbbfa53e)
 
 ![Screenshot 2025-06-19 225330](https://github.com/user-attachments/assets/47361ce2-3860-4ad3-afd6-51aac55b0690)
 
@@ -140,8 +145,7 @@ DeviceLogonEvents
 
 ✅ No successful logins were observed.
 
-### 📸 Screenshot  
-![08 - Query Verification](./screenshots/08-query-verification.png)
+![image](https://github.com/user-attachments/assets/0fc34be7-0848-4497-ac29-5b30800a187a)
 
 ---
 
@@ -156,8 +160,7 @@ The NSG contained a rule named `DANGER_AllowAnyAny` that allowed open RDP access
 - Locked down the NSG to allow only access from specific IPs
 - Proposed company-wide **Azure Policy** to prevent open RDP
 
-### 📸 Screenshot  
-![09 - NSG Before](./screenshots/09-nsg-before.png)
+![Screenshot 2025-06-19 232217](https://github.com/user-attachments/assets/55cbb56f-5d06-4674-bdab-6687a7335cfd)
 
 ---
 
@@ -178,8 +181,8 @@ The NSG contained a rule named `DANGER_AllowAnyAny` that allowed open RDP access
 - **Actions Taken:** VM isolated, AV scan completed, NSG updated  
 - **Status:** Incident closed with documentation and mitigation completed
 
-### 📸 Screenshot  
-![10 - Close Incident](./screenshots/10-close-incident.png)
+![Screenshot 2025-06-19 232630](https://github.com/user-attachments/assets/c3025fb0-7fa9-4cbb-9d4e-0d91ba997552)
+![Screenshot 2025-06-19 232906](https://github.com/user-attachments/assets/eb9a3731-9cc3-456a-bea1-7040fe893262)
 
 ---
 
