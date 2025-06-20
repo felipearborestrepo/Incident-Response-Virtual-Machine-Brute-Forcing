@@ -22,18 +22,21 @@ Remote attackers attempting to log in to Azure VMs generate logs in `DeviceLogon
 - **Entity Mappings:**
   - Host → `DeviceName`
   - IP → `RemoteIP`
-  - ![Screenshot 2025-06-19 225354](https://github.com/user-attachments/assets/b77307cd-b4c2-4f50-b208-d98a58c265ad)
+![Screenshot 2025-06-19 225354](https://github.com/user-attachments/assets/b77307cd-b4c2-4f50-b208-d98a58c265ad)
   - Stop Running Query for 24
- ![Screenshot 2025-06-19 225526](https://github.com/user-attachments/assets/1080a132-054d-4e89-9030-cc79a4e60c7a)
- ![Screenshot 2025-06-19 225504](https://github.com/user-attachments/assets/7390caa2-d459-4694-aedc-047fdfbbe20e)
- ![Screenshot 2025-06-19 225526](https://github.com/user-attachments/assets/08377c0b-2286-4114-aad8-006b5cc6725d)
+![Screenshot 2025-06-19 225526](https://github.com/user-attachments/assets/1080a132-054d-4e89-9030-cc79a4e60c7a)
+![Screenshot 2025-06-19 225504](https://github.com/user-attachments/assets/7390caa2-d459-4694-aedc-047fdfbbe20e)
+![Screenshot 2025-06-19 225526](https://github.com/user-attachments/assets/08377c0b-2286-4114-aad8-006b5cc6725d)
 
 - **MITRE ATT&CK Techniques:**
   - T1110.001 – Password Guessing  
   - T1110.002 – Password Cracking  
   - T1087.001 – Account Discovery (Local)
- ![Screenshot 2025-06-19 225131](https://github.com/user-attachments/assets/226502a1-7013-4818-aae9-c71381067772)
+
+![Screenshot 2025-06-19 225131](https://github.com/user-attachments/assets/226502a1-7013-4818-aae9-c71381067772)
+
 ![Screenshot 2025-06-19 225158](https://github.com/user-attachments/assets/572fd467-0d47-43ff-8f6d-d86f0162f54a)
+
 ### 📌 KQL Query
 
 ```kql
@@ -49,9 +52,11 @@ DeviceLogonEvents
 - This screenshot shows the Incident Settings tab of the Microsoft Sentinel Analytics Rule Wizard, where alert grouping is configured.
 - This setting groups multiple triggered alerts from the same analytics rule into a single incident to reduce noise and alert fatigue in the SOC.
 - By grouping alerts, SOC analysts can investigate one consolidated incident instead of dozens of redundant ones — improving efficiency, visibility, and triage speed.
+
 ![Screenshot 2025-06-19 225559](https://github.com/user-attachments/assets/b4dca3a6-5015-4aac-91a0-27189651012d)
 
 **Analytics Rule Created**
+
 ![Screenshot 2025-06-19 225614](https://github.com/user-attachments/assets/7db348d5-b269-40ed-b593-836f93489631)
 
 ---
@@ -99,7 +104,7 @@ DeviceLogonEvents
 | where ActionType != "LogonFailed"
 ![Screenshot 2025-06-19 231747](https://github.com/user-attachments/assets/75c7feb8-6462-46d2-9c75-da5ac2b366fb)
 
-```kql
+```
 ![Screenshot 2025-06-19 231747](https://github.com/user-attachments/assets/a6ce3f25-636f-4897-ae90-5cb86ad1486e)
 
 ---
